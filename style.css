@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "block2 block3 block4"
+    "block5 block3 block4"
+    "blocky block6 block6";
+  grid-template-columns: 220px 1fr 250px;
+  min-height: 100vh;
+  border: 2px solid #000;
+}
+
+.header {
+  grid-area: header;
+  background: #cfe7ff;
+  padding: 20px;
+  border-bottom: 2px solid #000;
+  position: relative;
+}
+
+.balance-box {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 5px 12px;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  margin-left: 150px;
+  font-size: 28px;
+}
+
+.menu-wrapper {
+  margin-left: 150px;
+  margin-top: 10px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+}
+
+.menu a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.block2 {
+  grid-area: block2;
+  background: #fde2c6;
+  padding: 12px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.block3 {
+  grid-area: block3;
+  padding: 12px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.block4 {
+  grid-area: block4;
+  background: #fde2c6;
+  padding: 12px;
+  border-bottom: 2px solid #000;
+}
+
+.block5 {
+  grid-area: block5;
+  background: #e6f5e8;
+  padding: 12px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.blocky {
+  grid-area: blocky;
+  background: #fff0d9;
+  padding: 12px;
+  border-right: 2px solid #000;
+}
+
+.block6 {
+  grid-area: block6;
+  background: #cfe7ff;
+  padding: 12px;
+}
+
+.main-img {
+  width: 100%;
+}
+
+.edit-btn {
+  display: block;
+  margin-top: 10px;
+  color: blue;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+@media(max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "block2"
+      "block5"
+      "blocky"
+      "block3"
+      "block4"
+      "block6";
+    grid-template-columns: 1fr;
+  }
+  .balance-box {
+    position: static;
+    transform: none;
+    margin-bottom: 10px;
+  }
+  .logo, .menu-wrapper {
+    margin-left: 0;
+  }
+}
